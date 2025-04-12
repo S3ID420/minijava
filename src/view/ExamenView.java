@@ -1,6 +1,6 @@
 package view;
 
-import controller.CandidatController;
+import controller.ExamenController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -9,24 +9,22 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import java.io.IOException;
 
-public class CandidatView {
+public class ExamenView {
     private Stage stage;
-    private CandidatController controller;
+    private ExamenController controller;
     private HBox footer;
    
-    public CandidatView() {
+    public ExamenView() {
         stage = new Stage();
-        stage.setTitle("Gestion des Candidats");
+        stage.setTitle("Gestion des Examens");
+        stage.setResizable(false);
        
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/fxml/candidat.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/fxml/ExamenView.fxml"));
             Parent root = loader.load();
             controller = loader.getController();
-            
-            stage.setMinWidth(800);
-            stage.setMinHeight(600);
         } catch (IOException e) {
-            System.err.println("Error loading CandidatView: " + e.getMessage());
+            System.err.println("Error loading Examen view: " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -37,7 +35,7 @@ public class CandidatView {
    
     public void show() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/fxml/candidat.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/fxml/ExamenView.fxml"));
             Parent content = loader.load();
             controller = loader.getController();
             
@@ -54,7 +52,7 @@ public class CandidatView {
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
-            System.err.println("Error showing CandidatView: " + e.getMessage());
+            System.err.println("Error showing ExamenView: " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -62,8 +60,8 @@ public class CandidatView {
     public void close() {
         stage.close();
     }
-   
-    public CandidatController getController() {
+    
+    public ExamenController getController() {
         return controller;
     }
 }

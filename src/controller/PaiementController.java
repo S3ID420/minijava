@@ -44,8 +44,7 @@ public class PaiementController implements Initializable {
         this.candidatService = new CandidatService();
         this.paiementsList = FXCollections.observableArrayList();
         
-        // Create the payments table if it doesn't exist
-        this.paiementService.createPaiementsTableIfNotExists();
+       
     }
     
     @Override

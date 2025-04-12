@@ -16,12 +16,12 @@ public class Candidat {
     private String email;
     private List<Document> documents;
 
-    // Default constructor
+    
     public Candidat() {
         this.documents = new ArrayList<>();
     }
 
-    // Parameterized constructor
+    
     public Candidat(int id, String nom, String prenom, LocalDate dateNaissance, String cin, 
                     String adresse, String telephone, String email) {
         this.id = id;
@@ -35,19 +35,19 @@ public class Candidat {
         this.documents = new ArrayList<>();
     }
 
-    // Method to add a document
+   
     public void ajouterDocument(Document document) {
         if (document != null) {
             documents.add(document);
         }
     }
 
-    // Method to remove a document
+    
     public boolean supprimerDocument(Document document) {
         return documents.remove(document);
     }
 
-    // Getters and Setters
+   
     public int getId() {
         return id;
     }

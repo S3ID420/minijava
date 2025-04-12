@@ -11,11 +11,11 @@ public class Document {
     private LocalDate dateAjout;
     private Path cheminFichier;
     
-    // Default constructor
+  
     public Document() {
     }
     
-    // Parameterized constructor
+  
     public Document(int id, String nom, String type, LocalDate dateAjout, Path cheminFichier) {
         this.id = id;
         this.nom = nom;

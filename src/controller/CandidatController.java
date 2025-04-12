@@ -194,7 +194,7 @@ public class CandidatController {
         
         if (candidatService.ajouterCandidat(nom, prenom, dateNaissance, cin, adresse, telephone, email)) {
             afficherInfo("Candidat ajouté avec succès.");
-            reinitialiserFormulaire();
+            
             chargerCandidats();
         } else {
             afficherErreur("Erreur lors de l'ajout du candidat.");

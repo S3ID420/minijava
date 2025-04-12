@@ -165,28 +165,7 @@ public class PaiementService {
         return new Paiement(id, montant, datePaiement, typePaiement, candidatId, description, numeroCheque);
     }
     
-    // Method to create the payments table if it doesn't exist
-    public void createPaiementsTableIfNotExists() {
-        String sql = "CREATE TABLE IF NOT EXISTS paiement (" +
-                     "id INT AUTO_INCREMENT PRIMARY KEY, " +
-                     "montant DOUBLE NOT NULL, " +
-                     "date_paiement DATE NOT NULL, " +
-                     "type_paiement VARCHAR(10) NOT NULL, " +
-                     "description TEXT, " +
-                     "candidat_id INT NOT NULL, " +
-                     "numero_cheque VARCHAR(50), " +
-                     "FOREIGN KEY (candidat_id) REFERENCES candidat(id) ON DELETE CASCADE)";
-        
-        try (Connection conn = DatabaseConnection.getConnection();
-             Statement stmt = conn.createStatement()) {
-            
-            stmt.executeUpdate(sql);
-            System.out.println("Paiements table created or already exists");
-            
-        } catch (SQLException e) {
-            System.err.println("Error creating payments table: " + e.getMessage());
-        }
-    }
+   
     
     // Calculate total payments for a candidate
     public double calculerTotalPaiementsParCandidatId(int candidatId) {
