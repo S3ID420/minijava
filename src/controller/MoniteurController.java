@@ -213,7 +213,7 @@ public class MoniteurController implements Initializable {
     
     private void refreshTable() {
         moniteurList.clear();
-        moniteurList.addAll(moniteurService.getMoniteurs());
+        moniteurList.addAll(moniteurService.getTousMoniteurs());
         moniteurTable.setItems(moniteurList);
     }
     
