@@ -1,5 +1,3 @@
-
-
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -9,10 +7,12 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import view.AutoEcoleView;
 import view.CandidatView;
+import view.PaiementView;
 
- public class Main extends Application {
+public class Main extends Application {
     private AutoEcoleView autoEcoleView;
     private CandidatView candidatView;
+    private PaiementView paiementView;
     
     @Override
     public void start(Stage primaryStage) {
@@ -21,6 +21,7 @@ import view.CandidatView;
         // Initialize views
         autoEcoleView = new AutoEcoleView();
         candidatView = new CandidatView();
+        paiementView = new PaiementView();
         
         // Create main menu
         Label titleLabel = new Label("Auto-École - Menu Principal");
@@ -36,6 +37,11 @@ import view.CandidatView;
         candidatButton.setPrefHeight(40);
         candidatButton.setOnAction(e -> candidatView.show());
         
+        Button paiementButton = new Button("Gestion des Paiements");
+        paiementButton.setMaxWidth(Double.MAX_VALUE);
+        paiementButton.setPrefHeight(40);
+        paiementButton.setOnAction(e -> paiementView.show());
+        
         Button quitterButton = new Button("Quitter");
         quitterButton.setMaxWidth(Double.MAX_VALUE);
         quitterButton.setPrefHeight(40);
@@ -43,11 +49,10 @@ import view.CandidatView;
         
         VBox vbox = new VBox(20);
         vbox.setPadding(new Insets(20));
-        vbox.getChildren().addAll(titleLabel, autoEcoleButton, candidatButton, quitterButton);
+        vbox.getChildren().addAll(titleLabel, autoEcoleButton, candidatButton, paiementButton, quitterButton);
         
         // Create scene
-        Scene scene = new Scene(vbox, 400, 300);
-        
+        Scene scene = new Scene(vbox, 400, 350);
         
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
